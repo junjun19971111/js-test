@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spread extends</title>
+    <style>
+        body {
+            background: #333333;
+        }
+        
+        .heading {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .heading span {
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.25s;
+        }
+        
+        .heading span:hover {
+            color: yellow;
+            transform: translateY(-20px) rotate(10deg) scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <H2 class="heading">LARAVIST!</H2>
+    <script>
+        // let dom = document.querySelector('.heading');
+        // dom.innerHTML = wrapSpan(dom.textContent);
+        // console.log(wrapSpan(dom.textContent));
+
+        // // wrapSpan(dom.textContent);
+
+        // function wrapSpan(word) {
+        //     return [...word].map(item => `<span>${item}</span>`).join('');
+        // }
+        // const fruits = [{
+        //         id: 0,
+        //         name: 'maimai',
+        //         age: 90
+        //     }, {
+        //         id: 1,
+        //         name: 'xianglin',
+        //         age: 18
+        //     }, {
+        //         id: 2,
+        //         name: 'zhuoxue',
+        //         age: 88
+        //     }]
+        //     // const index = fruits.findIndex(fruit => fruit.id === 1);
+        //     // const newFruits = [...fruits.slice(0, index), ...fruits.slice(index + 1)];
+        //     // console.log(newFruits);
+        // const newPeople = [{
+        //     id: 3,
+        //     name: 'shuangshaung',
+        //     age: 100
+        // }, {
+        //     id: 4,
+        //     name: 'qiqi',
+        //     age: 100
+        // }]
+        // fruits.push(...newPeople);
+        // const oldDate = [2017, 6, 1];
+        // const date = new Date(...oldDate);
+        // console.log(fruits);
+        // console.log(date);
+        let id = 0;
+        const keys = ['name', 'age', 'brith'];
+        const values = ['maimai', 18, '2019-1-1']
+
+        const person = {
+            [`user-${id++}`]: id,
+            [`user-${id++}`]: id,
+            [`user-${id++}`]: id,
+            [`user-${id++}`]: id,
+        }
+        const older = {
+            [keys.shift()]: values.shift(),
+            [keys.shift()]: values.shift(),
+            [keys.shift()]: values.shift()
+        }
+
+        console.log(person);
+        console.log(older);
+    </script>
+
+
+</body>
+
+</html>

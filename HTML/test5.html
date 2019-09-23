@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 studying</title>
+</head>
+<style>
+    .completed {
+        padding: 2px 5px;
+        background: #08bcd4;
+        color: white;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>Tomote</li>
+        <li>Apple</li>
+        <li>Mongo</li>
+    </ul>
+
+
+    <script>
+        //DOM.purity防止xss攻击
+        // const id = '511025199711111111';
+        // const word = 'I Love Summer';
+
+        // function padder(string, length = 25) {
+        //     return `${' '.repeat(length - string.length)}${string}`;
+        // }
+        // console.log(padder(id))
+        // console.log(padder(word));
+
+        //startsWith, endsWith, includes, repeat
+
+        // const people = {
+        //     name: '赵广',
+        //     age: 25,
+        //     family: {
+        //         mother: '马云禄',
+        //         father: '赵云',
+        //         brother: '赵统'
+        //     }
+        // }
+        // const {
+        //     name,
+        //     age,
+        //     sister = "没有妹妹"
+        // } = people;
+        // console.log(name);
+        // console.log(age);
+        // console.log(sister);
+
+        //for of loop
+
+        // const fruits = ['banana', 'apple', 'orange', 'mango'];
+        // for (let i = 0; i < fruits.length; i++) {
+        //     console.log(fruits[i]);
+        // }
+        // fruits.forEach(fruit => { //数组forEach遍历数组, 缺点，不能中止
+        //     // if (fruit == '') {
+        //     //     // break;
+        //     //     continue;
+        //     // }
+        //     console.log(fruit)
+        // });
+
+        //for in 会把是所有的可枚举属性遍历
+        // fruits.eating = 'I am eating banana!';
+
+        // Array.prototype.first = function() {
+        //         return fruits[0];
+        //     }
+        // for (let index in fruits) {
+        //     console.log(fruits[index]);
+        // }
+        // for (let fruit of fruits) {
+        //     console.log(fruit);
+
+        // }
+
+        // const fruits = ['Apple', 'Banana', 'Mango'];
+        // for (let [index, fruit] of fruits.entries()) { //for...of 目前暂时不支持对象
+        //     console.log(`${fruit} ranks ${index + 1} in my favorite fruits`);
+        // }
+
+        //for...of 用于arguments
+        // function sum() {
+        //     let total = 0;
+        //     for (let num of arguments) {
+        //         total = total + num;
+        //     }
+        //     console.log(total);
+        // }
+        // sum(1, 20, 33, 99, 100);
+        //for...of 可用于字符串
+        // let strs = 'Caden is god';
+        // for (let str of strs) {
+        //     console.log(str);
+        // }
+        // let lis = document.querySelectorAll('li');
+        // for (let li of lis) {
+        //     li.addEventListener('click', function() {
+        //         this.classList.toggle('completed');
+        //     })
+        // }
+        // const likeFriuts = [{
+        //     name: 'banana',
+        //     quantity: 2
+        // }, {
+        //     name: 'apple',
+        //     quantity: 1
+        // }, {
+        //     name: 'tomote',
+        //     quantity: 0
+        // }, ]
+
+        //find ()查询数组中满足某种条件的项
+        // const bananas = likeFriuts.find(fruit => fruit.name === 'banana');
+        // console.log(bananas);
+
+        //findIndex()查询数组中满足某种条件的项的index
+        // const apples = likeFriuts.findIndex(fruit => fruit.name === 'apple');
+        // console.log(apples);
+
+        //some() 判断数组中是否有某一项满足条件
+        // const isEngouh = likeFriuts.some(fruit => fruit.quantity > 1);
+        // console.log(isEngouh);
+
+        //every() 判断数组中是否所有项满足体条件
+        // const isEngouh = likeFriuts.every(fruit => fruit.quantity > 1);
+        // console.log(isEngouh);
+        // var validSum = function(devicePass) {
+        //     for (var i = 0; i < devicePass.length; i++) {
+        //         curr = parseInt(devicePass[i]);
+        //         if (curr + 1 == devicePass[i + 1] && curr + 2 == devicePass[i + 2]) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // console.log(validSum('11111345'));
+
+        //rest 剩余参数
+        // function num(...numbers) {
+        //     return numbers.reduce((pre, curr) => pre + curr);
+        // }
+        // console.log(num(1, 2, 3));
+        // console.log(num(1, 2, 3, 4));
+
+        // function getRate(rate, ...moneys) {
+        //     return moneys.map(money => money * rate);
+        // }
+        // console.log(getRate(0.89, 20, 30, 40, 100));
+
+        // const datas = ['Caden', 51102519971111111, 9, 5, 8, 7, 9]
+        // const [name, id, ...scores] = datas;
+        // console.log(name, id, scores);
+
+        //扩展运算符
+        // const youngers = ['香林', '卓学', '熊熊'];
+        // const olders = ['双双', '麦麦', '元凤'];
+        // // const members = [...youngers, '俊俊', ...olders];
+        // // console.log(members);
+
+        // let members = [...olders]; //以后数组赋值，尽量使用这个
+        // members[0] = '大哥哥';
+    </script>
+
+</body>
+
+</html>

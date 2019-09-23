@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // //凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。f1,f2,归根结底都是通过 new Function()的方式进行创建的。Function Object 也都是通过 New Function()创建的。
+        // var obj = function(){}
+        // function Obj2(name){
+        //     this.name = name;
+        // };
+        // var person  = new Obj2('yanyan');
+        // var man = new obj();
+        // var student = new Function('str', 'console.log(str)');
+        // console.log(student);
+        // console.log(typeof man); //未命名的函数
+        // console.log(typeof person);
+
+        //其中每个函数对象都有一个prototype 属性，这个属性指向函数的原型对象。
+        // 每个对象都有 __proto__ 属性，但只有函数对象才有 prototype 属性
+        // function Person() {}
+        //     Person.prototype.name = 'Zaxlct';
+        //     Person.prototype.age  = 28;
+        //     Person.prototype.job  = 'Software Engineer';
+        //     Person.prototype.sayName = function() {
+        //     console.log(this.name);
+        // }
+        // Person.prototype.sayAge = function(){
+        //     console.log(this.age);
+        // }
+        // let f = Person;
+        // console.log(f);
+        // let person1 = new Person();
+        // console.log(person1);
+        // person1.sayAge();
+
+        // let person2 = new Person();
+        // person2.sayName(); // 'Zaxlct'
+
+        // console.log(person1.sayName == person2.sayName); //true
+
+
+        // //原型是function函数的一个属性
+        // //原型是构造函数构造的对象的祖先
+        // function Person(name){             //构造函数
+        //     this.firstName = name;
+        // }  
+        // Person.prototype.lastName = "li";
+        // Person.prototype.firstName = 'junjun';
+        // Person.prototype.say = function(){
+        //     console.log(this.lastName +' '+ this.firstName);
+        // }
+        // var person = new Person('liangliang');
+
+
+        // Person.prototype.name = "麦麦";
+        // function Person (){
+        //     // var this = {
+        //     //     _proto_: Person.prototype  //new时，发生的隐式
+        //     // };
+        // }
+
+        // var person = new Person();
+        // console.log(person.name);
+        // Person.prototype.name = "junjun";
+        // // Person.prototype = {
+        //     name: "junjun"
+        // }
+
+        var obj = {
+            name: 'junjun'
+        }
+        var obj1 = obj;
+
+        obj.name = ',ai,ai'
+        console.log(obj1);
+    </script>
+</body>
+
+</html>

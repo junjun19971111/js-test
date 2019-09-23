@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <ul>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+    </ul> -->
+    <script>
+        //typeof返回六个值 number(NaN)  string undefined object(null属于object) boolean function(symbol属于 function)
+        //原始值: Number , String , undefined , Boolean , null 五大原始值
+        //闭包的实际产生和解决办法
+        // function test(){
+        //     let el = document.getElementsByTagName('li');
+        //     // for(let i =0 ;i<el.length; i++){ //es6直接用let可解决
+        //     //     el[i].onclick = function(){
+        //     //         console.log(i);
+        //     //     }
+        //     // }
+        //     for(var i =0; i<el.length ;i++){
+        //         (function(j){                      //立即执行函数可解决
+        //             el[j].onclick = function(){
+        //                 console.log(j);
+        //                 console.log('na'.repeat(2));
+        //             }
+        //         }(i));
+        //     }
+        // }
+        // test();
+
+        //引用值和原始值的区别
+        // let obj = {
+        //     "name": "易建联",
+        //     "sex": "男"
+        // }
+        // let person = obj;
+        // obj = {
+        //     name: '周琦',
+        //     work: '波兰名宿'
+        // }
+        // console.log(person);
+        // console.log(obj);
+
+
+
+        //闭包实验
+        // function showId(){
+        //     var el = document.getElementById("app");
+        //     var id = el.id;
+        //     el.onclick = function(){
+        //         console.log(id);
+        //         console.log(el);
+        //     }
+        //     el = null;
+        // // }
+        // console.log(typeof(NaN));
+        // console.log(typeof(null));
+        // const say = function() {
+        //     console.log('I am function');
+        // }
+        // console.log(typeof(say));
+
+        // const symbol = Symbol();
+        // console.log(typeof(symbol));
+        // showId();
+        // console.log('?'.charAt(0) ); //charAt已经能识别大于0xFFFF的字符。
+
+        //对象的创建方法
+        //1. let obj = {}  plainObject 对象字面量/对象直接量
+        //2.构造函数   1)Object()
+        //            2) 自定义
+        // function Car(color) {
+        //     //隐式 var this = {};
+
+        //     this.color = color;
+        //     this.name = 'BMW';
+        //     this.height = 1400;
+        //     this.health = 100;
+        //     this.run = function() {
+        //         this.health--;
+        //     }
+        //     return 123; //return 如果是原始值不会影响，但如果是 return {}引用值 不行
+        //     //return this; 隐式执行
+        // }
+        // let car = new Car('red');
+        // console.log(car);
+        // let obj = new Object();
+        // obj.name = 'Caden';
+        // obj.age = 18;
+        // console.log(obj); //
+
+        //   let car1 = new Car('green');
+
+
+        // //包装类
+        // let num = new Number(123);
+        // num.say = function() {
+        //     console.log('hhh')
+        // }
+        // let str = new String('abc');
+        // let bool = new Boolean(false);
+        // console.log(typeof(1));
+        // console.log(str);
+        // console.log(bool);
+
+        // //原始值不能有属性 为何 var str = "abc" , str.length = 3;
+        // var num = 123;
+        // num.len = 3;
+        // //隐式执行 new Number(123).len = 3 ; delete
+        // console.log(num.len);
+        // 隐式执行  访问new Number(num).len
+
+        // var arry = [1, 2, 3, 4];
+        // arry.length = 2;
+        // console.log(arry);
+        // var str = "1234";
+        // str.length = 2;
+        // //隐式执行 new String(str).length = 2 之后 delete
+        // console.log(str.length);
+        // //隐式执行 new String('1234').length   String 对象自带length属性
+
+        // //题目
+        //  var x = 1, y = z = 0;
+        //  function add(n){
+        //      return n = n +1;
+        //  }
+        //  y = add(x);
+        //  function add(n){
+        //      return n = n+3;
+        //  }
+        //  z = add(x);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- es6 关于对象的扩展 -->
+    <script>
+        // let name = 'lijunliang';
+        // let sex = '男';
+        // let age = 21;
+        // let person = {
+        //     sex,
+        //     age,
+        //     sayHello(){
+        //         console.log('Hello');
+        //     }
+        // }
+        // console.log(person);
+
+        // function f(x, y){
+        //     return {x, y};
+        // }
+        // //Object.is()
+        // +0 === -0 //true
+        // NaN === NaN // false
+        // Object.is(+0, -0) // false
+        // Object.is(NaN, NaN) // true
+
+        // //Object.assign()方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。
+        // let a = {x: 1, y: 2};
+        // let b = {y:3, z:1};
+        // let c = {z:6};
+        // Object.assign(a, b, c);
+
+        // let source = {
+        //     get fool(){
+        //         return 1
+        //     }
+        // }
+        // let target = {};
+        // Object.assign(target,  source);
+
+        //属性的可枚举性和遍历对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。
+        //Object.getOwnPropertyDescriptor
+        // let obj = {
+        //     'fool': 1
+        // };
+        // let des = Object.getOwnPropertyDescriptor(obj, 'fool');
+        // console.log(des);
+        // console.log(Object.keys(obj));
+
+        //super    super，指向当前对象的原型对象
+        // let proto = {
+        //     fool: "梨儿"
+        // }
+        // let person = {
+        //     say() {
+        //         console.log("俊俊说" + super.fool + "加油啊");
+        //     }
+        // }
+        // Object.setPrototypeOf(person, proto);
+        // person.say();
+
+        //ES2017 引入了跟Object.keys配套的Object.values和Object.entries，
+        //作为遍历一个对象的补充手段，供for...of循环使用。
+        // let {
+        //     keys,
+        //     values,y
+        //     entries
+        // } = Object;
+        // let obj = {
+        //     a: 1,
+        //     b: 2,
+        //     c: 3
+        // };
+        // for (let key of keys(obj)) {
+        //     console.log(key);
+        // }
+        // for (let value of values(obj)) {
+        //     console.log(value);
+        // }
+        // for (let [key, value] of entries(obj)) {
+        //     console.log([key, value]);
+        // }
+        // let z = {
+        //     a: 1,
+        //     n: 2
+        // };
+        // let b = {...z
+        // };
+        // console.log(b);
+        //扩展运算符的解构赋值不能够复制继承自原型对象的属性
+        // let o1 = {
+        //     a: 1
+        // };
+        // let o2 = {
+        //     b: 2
+        // };
+        // o2.__proto__ = o1;
+        // let {...o3
+        // } = o2;
+        // o3 // { b: 2 }
+        // o3.a // undefined
+
+        // let s = Symbol('fool');
+        // let a = null;
+        // console.log(s);
+        // console.log(typeof(a));
+
+        //由于每一个 Symbol 值都是不相等的，
+        //这意味着 Symbol 值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。
+        // let mySymbol = Symbol();
+        // let a = {
+        //     [mySymbol]: 'hello'
+        // };
+        // let b = {};
+        // b[mySymbol] = 'world';
+
+        // let c = {};
+        // Object.defineProperty(c, mySymbol, {
+        //     value: 'js'
+        // });
+        // console.log(a[mySymbol]);
+        // console.log(b[mySymbol]);
+        // console.log(c[mySymbol]);
+    </script>
+
+</body>
+
+</html>
